@@ -8,7 +8,9 @@ RUN git clone https://github.com/Abhijit2123/terraform_ec2_new.git
 
 WORKDIR /terraform_ec2_new/
 
-RUN cp -rf /opt/credentials_script.sh ./
+#RUN cp -rf /opt/credentials_script.sh ./
+
+COPY /var/lib/jenkins/credentials ./
 
 RUN mkdir -p /root/.aws/
 
