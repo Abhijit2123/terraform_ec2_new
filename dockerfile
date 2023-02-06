@@ -10,11 +10,11 @@ WORKDIR /terraform_ec2_new/
 
 #RUN cp -rf /opt/credentials_script.sh ./
 
-COPY /var/lib/jenkins/credentials ./
+COPY /var/lib/jenkins/credentials/credentials_script.sh ./
 
 RUN mkdir -p /root/.aws/
 
-COPY credentials /root/.aws/
+COPY /var/lib/jenkins/credentials/credentials /root/.aws/
 
 ENV TF_LOG TRACE
 
